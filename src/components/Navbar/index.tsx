@@ -1,41 +1,27 @@
+import Image from "next/image";
 import React from "react";
 
 const Navbar = () => {
   return (
-    <div
-      style={{
-        height: "70px",
-        borderBottom: "1px solid rgba(255,255,255,0.2)",
-        padding: "10px 0",
-        margin: "0 2%",
-      }}
-    >
-      <div
-        style={{
-          height: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        <div>IMAGE</div>
-        <div
-          style={{
-            display: "flex",
-            gap: "20px",
-          }}
-        >
+    <div className="h-20 border-b border-white/25 px-4 mx-9">
+      <div className="h-full flex items-center justify-between">
+        <div className="flex items-center">
+          <Image
+            src="/images/logo.PNG"
+            alt="logo"
+            width="170px"
+            height="70px"
+          />
+        </div>
+        <div className="flex gap-4">
           <div>
-            <h2>NodeMoniker</h2>
+            <h2 className="text-xl font-bold">Node Moniker</h2>
             <p>Myaddresstest</p>
           </div>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <button>Start Node</button>
+          <div className="flex items-center">
+            <button className="bg-[#2D6F40] hover:bg-306b37 text-white py-2 px-4 rounded">
+              Start Node
+            </button>
           </div>
         </div>
       </div>
