@@ -19,8 +19,6 @@ export default function Home() {
         <Sidebar />
         <Dashboard />
       </main>
-
-      <footer className={styles.footer}>Footer</footer>
     </div>
   );
 }
