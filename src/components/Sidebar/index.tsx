@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import SectionNavigator from "../SectionNavigator";
 import AddressInfo from "./components/AddressInfo";
+import SectionSelector from "./components/SectionSelector";
 
 const Sidebar = () => {
+  const [selectedSection, setSelectedSection] = useState<Number>(0);
+
+  const sections = [
+    {
+      sectionName: "Node Overview",
+      icon: "Icon 1",
+    },
+    {
+      sectionName: "DVPN Earnings",
+      icon: "Icon 2",
+    },
+  ];
+
+  const changeSelectedSection = (selectedSectionIndex: Number) => {
+    setSelectedSection(selectedSectionIndex);
+    return;
+  };
+
   return (
     <aside
       style={{
@@ -18,9 +37,30 @@ const Sidebar = () => {
           flexGrow: 1,
           border: "1px solid rgba(255,255,255,0.1)",
           borderRadius: "10px",
+          display: "flex",
+          flexDirection: "column",
+          gap: "20px",
         }}
       >
         <AddressInfo />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+          }}
+        >
+          {sections.map((section, index) => (
+            <SectionSelector
+              selected={index == selectedSection ? true : false}
+              sectionName={section.sectionName}
+              icon={<div>{section.icon}</div>}
+              key={section.sectionName}
+              changeSelectedSection={changeSelectedSection}
+              sectionId={index}
+            />
+          ))}
+        </div>
       </div>
     </aside>
   );
