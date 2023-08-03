@@ -1,5 +1,9 @@
 # NEOBASE - DASHBOARD
 
+<img src="https://i.ibb.co/r6QTZ8V/1.png" alt="1" border="0" />
+
+<img src="https://i.ibb.co/LZ3bkpf/2.png" alt="2" border="0" />
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -9,8 +13,6 @@
 - [Contact](#contact)
 
 ### Prerequisites
-
-Detail any software or tools that need to be installed on the user's system before running the project. Include links to the official websites for easy access.
 
 - [Node.js](https://nodejs.org/) - Make sure to have Node.js installed.
 - [npm](https://www.npmjs.com/) - npm is the package manager for Node.js and comes bundled with it.
