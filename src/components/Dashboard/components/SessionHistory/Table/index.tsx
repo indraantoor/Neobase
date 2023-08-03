@@ -2,86 +2,30 @@
 import React, { useMemo } from "react";
 import { useTable } from "react-table";
 import { COLUMNS } from "./columns";
-
-const MOCK_DATA = [
-  {
-    id: 1,
-    sessions_start_time: "11:43:23",
-    date: "27-03-2023",
-    duration: "0.245 sec",
-    node_used: "Wineguard",
-    data_consumed: "0.12 MB",
-    location_of_node: "Singapore",
-  },
-  {
-    id: 2,
-    sessions_start_time: "11:43:23",
-    date: "27-03-2023",
-    duration: "0.245 sec",
-    node_used: "Wineguard",
-    data_consumed: "0.12 MB",
-    location_of_node: "Singapore",
-  },
-  {
-    id: 3,
-    sessions_start_time: "11:43:23",
-    date: "27-03-2023",
-    duration: "0.245 sec",
-    node_used: "Wineguard",
-    data_consumed: "0.12 MB",
-    location_of_node: "Singapore",
-  },
-  {
-    id: 4,
-    sessions_start_time: "11:43:23",
-    date: "27-03-2023",
-    duration: "0.245 sec",
-    node_used: "Wineguard",
-    data_consumed: "0.12 MB",
-    location_of_node: "Singapore",
-  },
-  {
-    id: 5,
-    sessions_start_time: "11:43:23",
-    date: "27-03-2023",
-    duration: "0.245 sec",
-    node_used: "Wineguard",
-    data_consumed: "0.12 MB",
-    location_of_node: "Singapore",
-  },
-  {
-    id: 6,
-    sessions_start_time: "11:43:23",
-    date: "27-03-2023",
-    duration: "0.245 sec",
-    node_used: "Wineguard",
-    data_consumed: "0.12 MB",
-    location_of_node: "Singapore",
-  },
-];
-
-const COLUMNS_DATA = COLUMNS.map((column) => {
-  if (column.accessor == "node_used") {
-    return {
-      ...column,
-      Cell: ({ cell }) => (
-        <div className="text-sm bg-blue-600 text-white text-center">
-          {cell.row.values.node_used}
-        </div>
-      ),
-    };
-  }
-  return column;
-});
+import { useFetchMockData } from "../../../../../hooks/useFetchMockData";
 
 const Table = () => {
-  const columns = useMemo(() => COLUMNS_DATA, []);
-  const data = useMemo(() => MOCK_DATA, []);
+  const { data: mockData, isLoading, isError } = useFetchMockData();
+
+  const columns = useMemo(() => COLUMNS, []);
+  const data = useMemo(() => mockData?.data?.sessionHistory || [], [mockData]);
 
   const tableInstance = useTable<any>({
     columns,
     data,
   });
+
+  if (isLoading) {
+    return <h2 className="px-5 py-6">Loading...</h2>;
+  }
+
+  if (isError) {
+    return (
+      <h2 className="px-5 py-6">
+        Something went wrong. Please try again after some time
+      </h2>
+    );
+  }
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     tableInstance;

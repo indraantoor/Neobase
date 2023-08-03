@@ -1,4 +1,6 @@
-export const COLUMNS = [
+import React from "react";
+
+const COLUMNS_DATA = [
   {
     Header: "Sessions start time",
     accessor: "sessions_start_time",
@@ -24,3 +26,17 @@ export const COLUMNS = [
     accessor: "location_of_node",
   },
 ];
+
+export const COLUMNS = COLUMNS_DATA.map((column) => {
+  if (column.accessor == "node_used") {
+    return {
+      ...column,
+      Cell: ({ cell }) => (
+        <div className="text-sm bg-blue-600 text-white text-center">
+          {cell.row.values.node_used}
+        </div>
+      ),
+    };
+  }
+  return column;
+});
