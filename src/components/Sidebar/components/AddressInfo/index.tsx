@@ -4,8 +4,8 @@ import Address from "./components/Address";
 const AddressInfo = () => {
   return (
     <div>
-      <Address />
-      <Address />
+      <Address title="IP Address" information="136.251.15.107" />
+      <Address title="Country" information="Canada" />
     </div>
   );
 };

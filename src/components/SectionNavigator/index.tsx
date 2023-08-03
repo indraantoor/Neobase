@@ -12,7 +12,7 @@ const SectionNavigator = ({
   forward,
 }: ISectionNavigatorProps) => {
   return (
-    <div className="px-5 py-5 flex gap-5">
+    <div className="px-5 py-5 flex gap-5 items-center">
       {back && (
         <div className="cursor-pointer">
           <svg

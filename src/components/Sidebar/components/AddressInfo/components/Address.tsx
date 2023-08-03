@@ -1,28 +1,15 @@
 import React from "react";
 
-const Address = () => {
+interface IAddressProps {
+  title: string;
+  information: string;
+}
+
+const Address = ({ title, information }: IAddressProps) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-      }}
-    >
-      <div
-        style={{
-          color: "#555659",
-        }}
-      >
-        IP Address
-      </div>
-      <div
-        style={{
-          color: "#555659",
-        }}
-      >
-        :
-      </div>
-      <div>136.251.15.107</div>
+    <div className="flex justify-between">
+      <div className="text-gray-600">{title} :</div>
+      <div>{information}</div>
     </div>
   );
 };

@@ -4,7 +4,7 @@ interface ISectionSelectorProps {
   sectionName: string;
   selected: boolean;
   icon: ReactNode;
-  sectionId: Number;
+  sectionId: number;
   changeSelectedSection: Function;
 }
 
@@ -17,46 +17,37 @@ const SectionSelector = ({
 }: ISectionSelectorProps) => {
   return (
     <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        padding: "13px",
-        border: selected
-          ? "1px solid #0075E4"
-          : "1px solid rgba(255,255,255,0.1)",
-        borderRadius: "10px",
-        cursor: "pointer",
-      }}
+      className={`flex justify-between p-3 ${
+        selected ? "border border-blue-500" : "border border-white/10"
+      } rounded cursor-pointer`}
       onClick={() => changeSelectedSection(sectionId)}
     >
-      <div
-        style={{
-          display: "flex",
-          gap: "5px",
-        }}
-      >
+      <div className="flex gap-5 items-center">
         <span
-          style={{
-            color: selected ? "#0075E4" : "#555659",
-          }}
+          className={`p-1 rounded-full text-${
+            selected ? "blue-500" : "gray-600"
+          } bg-${selected ? "blue-500" : "gray-600"}`}
         >
-          {icon}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-5 h-5"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 13.5V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m12-3V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m-6-9V3.75m0 3.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 9.75V10.5"
+            />
+          </svg>
         </span>
-        <span
-          style={{
-            color: selected ? "white" : "#555659",
-          }}
-        >
+        <span className={`text-${selected ? "white" : "gray-600"}`}>
           {sectionName}
         </span>
       </div>
-      <div
-        style={{
-          color: selected ? "white" : "#555659",
-        }}
-      >
-        {">"}
-      </div>
+      <div className={`text-${selected ? "white" : "gray-600"}`}>{">"}</div>
     </div>
   );
 };

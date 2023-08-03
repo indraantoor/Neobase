@@ -4,7 +4,7 @@ import AddressInfo from "./components/AddressInfo";
 import SectionSelector from "./components/SectionSelector";
 
 const Sidebar = () => {
-  const [selectedSection, setSelectedSection] = useState<Number>(0);
+  const [selectedSection, setSelectedSection] = useState<number>(0);
 
   const sections = [
     {
@@ -17,42 +17,22 @@ const Sidebar = () => {
     },
   ];
 
-  const changeSelectedSection = (selectedSectionIndex: Number) => {
+  const changeSelectedSection = (selectedSectionIndex: number) => {
     setSelectedSection(selectedSectionIndex);
     return;
   };
 
   return (
-    <aside
-      style={{
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <SectionNavigator content={<h2>Instance Name</h2>} />
-      <div
-        style={{
-          background: "#0D1119",
-          padding: "10px 15px",
-          flexGrow: 1,
-          border: "1px solid rgba(255,255,255,0.1)",
-          borderRadius: "10px",
-          display: "flex",
-          flexDirection: "column",
-          gap: "20px",
-        }}
-      >
+    <aside className="flex flex-col">
+      <SectionNavigator
+        content={<h2 className="text-xl font-bold">Instance Name</h2>}
+      />
+      <div className="bg-gray-900 p-4 flex-1 border border-white/10 rounded space-y-4">
         <AddressInfo />
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "10px",
-          }}
-        >
+        <div className="space-y-2">
           {sections.map((section, index) => (
             <SectionSelector
-              selected={index == selectedSection ? true : false}
+              selected={index === selectedSection}
               sectionName={section.sectionName}
               icon={<div>{section.icon}</div>}
               key={section.sectionName}
