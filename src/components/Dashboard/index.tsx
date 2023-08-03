@@ -1,5 +1,7 @@
 import React from "react";
-import SessionInformation from "./SessionInformation";
+import SessionInformation from "./components/SessionInformation";
+import SessionActivity from "./components/SessionActivity";
+import SessionHistory from "./components/SessionHistory";
 
 const Dashboard = () => {
   const sessionsInformation = [
@@ -27,30 +29,37 @@ const Dashboard = () => {
 
   return (
     <div
-      style={
-        {
-          // background: "orange",
-        }
-      }
+      style={{
+        background: "orange",
+        display: "flex",
+        flexDirection: "column",
+        gap: "20px",
+        padding: "0 10px",
+      }}
     >
-      <h2>Session History</h2>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          marginTop: "20px",
-          gap: "10px",
-        }}
-      >
-        {sessionsInformation.map((session) => (
-          <SessionInformation
-            title={session.title}
-            growthValue={session.growthValue}
-            key={session.title}
-            value={session.value}
-          />
-        ))}
+      <div>
+        <h2>Session History</h2>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            marginTop: "20px",
+            gap: "10px",
+          }}
+        >
+          {sessionsInformation.map((session) => (
+            <SessionInformation
+              title={session.title}
+              growthValue={session.growthValue}
+              key={session.title}
+              value={session.value}
+            />
+          ))}
+        </div>
       </div>
+
+      <SessionActivity />
+      <SessionHistory />
     </div>
   );
 };

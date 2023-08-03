@@ -1,13 +1,11 @@
 .container {
   background: #080a0f;
-  height: 100vh;
   color: white;
   display: flex;
   flex-direction: column;
 }
 
 .main {
-  flex: 1;
   padding: 20px 30px;
   display: grid;
   grid-template-columns: 23% 76%;
