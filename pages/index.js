@@ -1,6 +1,8 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Navbar from "../src/Navbar";
+import Sidebar from "../src/Sidebar";
+import Dashboard from "../src/Dashboard";
 
 export default function Home() {
   return (
@@ -13,7 +15,10 @@ export default function Home() {
 
       <Navbar />
 
-      <main className={styles.main}>CONTENT</main>
+      <main className={styles.main}>
+        <Sidebar />
+        <Dashboard />
+      </main>
 
       <footer className={styles.footer}>Footer</footer>
     </div>
