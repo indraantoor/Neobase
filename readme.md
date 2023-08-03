@@ -1,4 +1,4 @@
-# Project Name
+# NEOBASE - DASHBOARD
 
 A brief description of the project or application.
 
@@ -45,7 +45,7 @@ npm install
 
 ## Usage
 
-Explain how to run and use the project locally.
+To run and use the project locally.
 
 ```bash
 npm run dev
