@@ -1,7 +1,5 @@
 # NEOBASE - DASHBOARD
 
-A brief description of the project or application.
-
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -9,10 +7,6 @@ A brief description of the project or application.
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contact](#contact)
-
-## Introduction
-
-Introduce your project and provide a high-level overview of its purpose and goals.
 
 ### Prerequisites
 
