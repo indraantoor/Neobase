@@ -1,8 +1,14 @@
-/**
- * @type {import('@types/tailwindcss/tailwind-config').TailwindConfig}
- */
 module.exports = {
-  content: ["./pages/**/*.{ts,tsx}", "./public/**/*.html"],
+  purge: [
+    "./src/**/*.{js,ts,jsx,tsx}",
+    // Add more here
+  ],
+  darkMode: "class",
+  theme: {
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
   plugins: [],
-  theme: {},
 };
