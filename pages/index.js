@@ -1,5 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import Navbar from "../src/Navbar";
 
 export default function Home() {
   return (
@@ -9,6 +10,8 @@ export default function Home() {
         <meta name="description" content="Created by Indraan S Toor" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Navbar />
 
       <main className={styles.main}>CONTENT</main>
 
