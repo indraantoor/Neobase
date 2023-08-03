@@ -16,7 +16,7 @@ const Navbar = () => {
         <div className="flex gap-4">
           <div>
             <h2 className="text-xl font-bold">Node Moniker</h2>
-            <p>Myaddresstest</p>
+            <p className="font-light">sentljqd5s...axu6c</p>
           </div>
           <div className="flex items-center">
             <button className="bg-[#2D6F40] hover:bg-306b37 text-white py-2 px-4 rounded">

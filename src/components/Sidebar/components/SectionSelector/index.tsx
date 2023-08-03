@@ -3,7 +3,6 @@ import React, { ReactNode } from "react";
 interface ISectionSelectorProps {
   sectionName: string;
   selected: boolean;
-  icon: ReactNode;
   sectionId: number;
   changeSelectedSection: Function;
 }
@@ -11,13 +10,12 @@ interface ISectionSelectorProps {
 const SectionSelector = ({
   sectionName,
   selected = false,
-  icon,
   sectionId,
   changeSelectedSection,
 }: ISectionSelectorProps) => {
   return (
     <div
-      className={`flex justify-between p-3 ${
+      className={`flex items-center justify-between p-3 ${
         selected ? "border border-blue-500" : "border border-white/10"
       } rounded cursor-pointer`}
       onClick={() => changeSelectedSection(sectionId)}
