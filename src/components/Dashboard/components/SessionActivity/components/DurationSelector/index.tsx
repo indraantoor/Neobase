@@ -3,22 +3,15 @@ import React from "react";
 const DurationSelector = () => {
   const durations = ["1D", "1M", "1Y"];
   return (
-    <div
-      style={{
-        display: "flex",
-        gap: "5px",
-      }}
-    >
+    <div className="flex gap-2">
       {durations.map((duration, index) => (
         <div
           key={duration}
-          style={{
-            cursor: "pointer",
-            background: index + 1 == durations.length ? "#0075E4" : "#1E1B24",
-            padding: "2px 6px",
-            borderRadius: "5px",
-            color: index + 1 == durations.length ? "white" : "#555659",
-          }}
+          className={`cursor-pointer ${
+            index + 1 === durations.length ? "bg-blue-500" : "bg-gray-900"
+          } px-2 py-1 rounded text-sm ${
+            index + 1 === durations.length ? "text-white" : "text-gray-600"
+          }`}
         >
           {duration}
         </div>

@@ -11,28 +11,12 @@ const SessionInformation = ({
   value,
   growthValue,
 }: ISessionInformationProps) => {
-  const isPositiveGrowth = growthValue.startsWith("+") ? true : false;
+  const isPositiveGrowth = growthValue.startsWith("+");
   return (
-    <div
-      style={{
-        background: "#0D121A",
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        padding: "20px 25px",
-        height: "150px",
-        border: "1px solid rgba(255,255,255,0.1)",
-        borderRadius: "10px",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
-        <div>{title}</div>
-        {growthValue ? (
+    <div className="bg-gray-900 w-full flex flex-col p-5 h-150 border border-white/10 rounded">
+      <div className="flex justify-between">
+        <div className="font-bold">{title}</div>
+        {growthValue && (
           <div
             style={{
               color: isPositiveGrowth ? "green" : "red",
@@ -40,17 +24,9 @@ const SessionInformation = ({
           >
             {growthValue}%
           </div>
-        ) : null}
+        )}
       </div>
-      <div
-        style={{
-          flexGrow: 1,
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        {value}
-      </div>
+      <div className="text-xl flex-grow flex items-center">{value}</div>
     </div>
   );
 };

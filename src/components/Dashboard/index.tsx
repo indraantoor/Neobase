@@ -28,24 +28,10 @@ const Dashboard = () => {
   ];
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "20px",
-        padding: "0 10px",
-      }}
-    >
+    <div className="flex flex-col gap-5 px-2">
       <div>
-        <h2>Session History</h2>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            marginTop: "20px",
-            gap: "10px",
-          }}
-        >
+        <h2 className="text-xl font-bold">Session History</h2>
+        <div className="flex justify-between mt-5 gap-3">
           {sessionsInformation.map((session) => (
             <SessionInformation
               title={session.title}

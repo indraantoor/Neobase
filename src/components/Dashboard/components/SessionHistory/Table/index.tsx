@@ -65,13 +65,7 @@ const COLUMNS_DATA = COLUMNS.map((column) => {
     return {
       ...column,
       Cell: ({ cell }) => (
-        <div
-          style={{
-            background: "#1F5EFF",
-            color: "white",
-            textAlign: "center",
-          }}
-        >
+        <div className="text-sm bg-blue-600 text-white text-center">
           {cell.row.values.node_used}
         </div>
       ),
@@ -92,32 +86,20 @@ const Table = () => {
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     tableInstance;
 
-  console.log("MY ROWS", { sdsd: prepareRow(rows[0]), rows: rows[0] });
-
   return (
     <div>
       <table
         {...getTableProps()}
+        className="w-full"
         style={{
-          //   background: "Red",
-          width: "100%",
           textAlign: "left",
         }}
       >
-        <thead
-          style={{
-            background: "#141B24",
-          }}
-        >
+        <thead className="bg-gray-900">
           {headerGroups.map((headerGroup, index) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column, index) => (
-                <th
-                  style={{
-                    padding: "10px 25px",
-                  }}
-                  {...column.getHeaderProps()}
-                >
+                <th className="p-4" {...column.getHeaderProps()}>
                   {column.render("Header")}
                 </th>
               ))}
@@ -132,11 +114,7 @@ const Table = () => {
                 {row.cells.map((cell, index) => {
                   return (
                     <td
-                      style={{
-                        padding: "10px 25px",
-                        borderBottom: "1px solid rgba(255,255,255,0.1)",
-                        color: "#555659",
-                      }}
+                      className="p-4 border-b border-white/10 text-gray-600"
                       {...cell.getCellProps()}
                     >
                       {cell.render("Cell")}
