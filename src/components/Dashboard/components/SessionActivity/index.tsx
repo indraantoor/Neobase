@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import DurationSelector from "./components/DurationSelector";
+import { BarChart } from "./components/BarChart";
 
 const SessionActivity = () => {
   return (
     <div
       style={{
         background: "#0D121A",
-        height: "300px",
         border: "1px solid rgba(255,255,255,0.1)",
         borderRadius: "10px",
       }}
@@ -22,6 +22,14 @@ const SessionActivity = () => {
         <div>
           <DurationSelector />
         </div>
+      </div>
+
+      <div
+        style={{
+          padding: "10px 20px",
+        }}
+      >
+        <BarChart />
       </div>
     </div>
   );
