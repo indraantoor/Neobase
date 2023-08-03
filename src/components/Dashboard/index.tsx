@@ -30,7 +30,6 @@ const Dashboard = () => {
   return (
     <div
       style={{
-        background: "orange",
         display: "flex",
         flexDirection: "column",
         gap: "20px",
